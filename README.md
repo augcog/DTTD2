@@ -74,10 +74,7 @@ Robust-Digital-Twin-Tracking
 ### Train
 
 ### Eval
-[YCB-VideoToolBox](https://github.com/yuxng/YCB_Video_toolbox)
-
-### Attention Visualization
-
+This is the [ToolBox](https://github.com/yuxng/YCB_Video_toolbox) that we used for the experiment result evaluation and comparison.
 
 ### Citation
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
