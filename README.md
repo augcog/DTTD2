@@ -51,9 +51,6 @@ Robust-Digital-Twin-Tracking
                 │   │   └── data
                 │   │   │   ├── 00001_color.jpg
                 │   │   │   ├── 00001_depth.png
-                │   │   │   ├── 00001_label_debug.png
-                │   │   │   ├── 00001_label.png
-                │   │   │   ├── 00001_meta.json
                 │   │   │   └── ...
                 |   │   └── scene_meta.yaml
                 │   ├── scene2
@@ -66,10 +63,7 @@ Robust-Digital-Twin-Tracking
                     │   ├── apple.obj
                     │   ├── front.xyz
                     │   ├── points.xyz
-                    │   ├── textured_0_etZloZLC.jpg
-                    │   ├── textured_0_norm_etZloZLC.jpg
-                    │   ├── textured_0_occl_etZloZLC.jpg
-                    │   ├── textured_0_roughness_etZloZLC.jpg
+                    │   ├── ...
                     │   └── textured.obj.mtl
                     ├── black_expo_marker
                     └── ...
