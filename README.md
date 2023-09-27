@@ -29,7 +29,7 @@ For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/
 ### Load Checkpoints
 Download our checkpoints and datasets, then organize the file structure:
 ```
-root
+Robust-Digital-Twin-Tracking
 ├── checkpoints
 │   ├── m8p4.pth
 │   └── m8p4_filter.pth
@@ -38,39 +38,39 @@ root
 ```
 ```
 DTTD_IPhone_Dataset
-├── cameras
-│   ├── az_camera1 (if you want to train our algorithm with DTTD v1)
-│   ├── iphone14pro_camera1
-│   ├── iphone_camera_data.json
-│   └── ZED2 (to be released...)
-├── data
-│   ├── scene1
-│   │   └── data
-│   │   │   ├── 00001_color.jpg
-│   │   │   ├── 00001_depth.png
-│   │   │   ├── 00001_label_debug.png
-│   │   │   ├── 00001_label.png
-│   │   │   ├── 00001_meta.json
-│   │   │   └── ...
-|   |   └── scene_meta.yaml
-│   ├── scene2
-│   │   └── data
-|   |   └── scene_meta.yaml
-|   ...
-|
-└── objects
-    ├── apple
-    │   ├── apple.mtl
-    │   ├── apple.obj
-    │   ├── front.xyz
-    │   ├── points.xyz
-    │   ├── textured_0_etZloZLC.jpg
-    │   ├── textured_0_norm_etZloZLC.jpg
-    │   ├── textured_0_occl_etZloZLC.jpg
-    │   ├── textured_0_roughness_etZloZLC.jpg
-    │   └── textured.obj.mtl
-    ├── black_expo_marker
-    └── ...
+└── root
+    ├── cameras
+    │   ├── az_camera1 (if you want to train our algorithm with DTTD v1)
+    │   ├── iphone14pro_camera1
+    │   ├── iphone_camera_data.json
+    │   └── ZED2 (to be released...)
+    ├── data
+    │   ├── scene1
+    │   │   └── data
+    │   │   │   ├── 00001_color.jpg
+    │   │   │   ├── 00001_depth.png
+    │   │   │   ├── 00001_label_debug.png
+    │   │   │   ├── 00001_label.png
+    │   │   │   ├── 00001_meta.json
+    │   │   │   └── ...
+    |   │   └── scene_meta.yaml
+    │   ├── scene2
+    │   │   └── data
+    |   │   └── scene_meta.yaml
+    │   ...
+    └── objects
+        ├── apple
+        │   ├── apple.mtl
+        │   ├── apple.obj
+        │   ├── front.xyz
+        │   ├── points.xyz
+        │   ├── textured_0_etZloZLC.jpg
+        │   ├── textured_0_norm_etZloZLC.jpg
+        │   ├── textured_0_occl_etZloZLC.jpg
+        │   ├── textured_0_roughness_etZloZLC.jpg
+        │   └── textured.obj.mtl
+        ├── black_expo_marker
+        └── ...
 ```
 
 ### Estimation
