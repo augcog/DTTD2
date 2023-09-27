@@ -7,38 +7,8 @@ This repo is the implementation code of the paper "Towards Robust Mobile Digital
 - [x] our dataset with IPhone LiDAR: DTTDv2 is released, please check our [repo here](https://github.com/OpenARK-Berkeley/DTTDv2-IPhoneLiDAR) for data collection and annotation.
 - [x] our trained network checkpoints are released [here](https://drive.google.com/drive/folders/18laguqXN7b-WTFrHlRpbteqmE8oRF_8H?usp=drive_link).
 
-## Installation
 
-```
-python=3.8
-torch
-torchvision
-torchaudio
-numpy
-eniops
-pillow
-scipy
-opencv_python
-tensorboard
-tqdm
-```
-
-For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/KNN_CUDA. (Install KNN_CUDA requires CUDA environment, ensure that your CUDA version >= 10.2. Also, It only supports torch v1.0+.)
-
-## Run
-To run object detection, see `detection/readme.md`.
-To run coarse estimation, see `estimation/readme.md`.
-To run dataset evaluation, see `estimation/dataset/readme.md`.
-
-# Train
-
-# Eval
-[YCB-VideoToolBox](https://github.com/yuxng/YCB_Video_toolbox)
-
-# To Visualize Attention
-
-
-# Citation
+### Citation
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
 ```
 @InProceedings{DTTDv1,
@@ -59,5 +29,36 @@ If our work is useful or relevant to your research, please kindly recognize our 
       primaryClass={cs.CV}
 }
 ```
+
+### Installation
+
+```
+python=3.8
+torch
+torchvision
+torchaudio
+numpy
+eniops
+pillow
+scipy
+opencv_python
+tensorboard
+tqdm
+```
+
+For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/KNN_CUDA. (Install KNN_CUDA requires CUDA environment, ensure that your CUDA version >= 10.2. Also, It only supports torch v1.0+.)
+
+### Estimation
+
+### Train
+
+### Load Pretrained Model
+
+### Eval
+[YCB-VideoToolBox](https://github.com/yuxng/YCB_Video_toolbox)
+
+### Attention Visualization
+
+
 
 
