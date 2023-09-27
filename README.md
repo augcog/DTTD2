@@ -7,29 +7,6 @@ This repo is the implementation code of the paper "Towards Robust Mobile Digital
 - [x] our dataset with IPhone LiDAR: DTTDv2 is released, please check our [repo here](https://github.com/OpenARK-Berkeley/DTTDv2-IPhoneLiDAR) for data collection and annotation.
 - [x] our trained network checkpoints are released [here](https://drive.google.com/drive/folders/18laguqXN7b-WTFrHlRpbteqmE8oRF_8H?usp=drive_link).
 
-
-### Citation
-If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
-```
-@InProceedings{DTTDv1,
-    author    = {Feng, Weiyu and Zhao, Seth Z. and Pan, Chuanyu and Chang, Adam and Chen, Yichen and Wang, Zekun and Yang, Allen Y.},
-    title     = {Digital Twin Tracking Dataset (DTTD): A New RGB+Depth 3D Dataset for Longer-Range Object Tracking Applications},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-    month     = {June},
-    year      = {2023},
-    pages     = {3288-3297}
-}
-
-@misc{DTTDv2,
-      title={Towards Subcentimeter Accuracy Digital-Twin Tracking via An RGBD-based Transformer Model and A Comprehensive Mobile Dataset}, 
-      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Tianjian Xu and Weiyu Feng and Allen Y. Yang},
-      year={2023},
-      eprint={2309.13570},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
-
 ### Installation
 
 ```
@@ -60,5 +37,26 @@ For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/
 ### Attention Visualization
 
 
+### Citation
+If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
+```
+@InProceedings{DTTDv1,
+    author    = {Feng, Weiyu and Zhao, Seth Z. and Pan, Chuanyu and Chang, Adam and Chen, Yichen and Wang, Zekun and Yang, Allen Y.},
+    title     = {Digital Twin Tracking Dataset (DTTD): A New RGB+Depth 3D Dataset for Longer-Range Object Tracking Applications},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2023},
+    pages     = {3288-3297}
+}
+
+@misc{DTTDv2,
+      title={Towards Subcentimeter Accuracy Digital-Twin Tracking via An RGBD-based Transformer Model and A Comprehensive Mobile Dataset}, 
+      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Tianjian Xu and Weiyu Feng and Allen Y. Yang},
+      year={2023},
+      eprint={2309.13570},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
 
 
