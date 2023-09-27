@@ -26,11 +26,11 @@ tqdm
 
 For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/KNN_CUDA. (Install KNN_CUDA requires CUDA environment, ensure that your CUDA version >= 10.2. Also, It only supports torch v1.0+.)
 
+### Load Checkpoints
+
 ### Estimation
 
 ### Train
-
-### Load Pretrained Model
 
 ### Eval
 [YCB-VideoToolBox](https://github.com/yuxng/YCB_Video_toolbox)
