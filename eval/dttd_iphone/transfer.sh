@@ -1,0 +1,1 @@
+scp -r /home/zixun/Documents/DigitalTwin-6DPose_cleaned/estimation/eval/dttd_iphone/eval_results_densefusion_gtmask openark@192.168.0.163:/home/openark/chuanyu/data/evaluation/eval_result_denseiphone

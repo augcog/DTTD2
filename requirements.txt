@@ -1,0 +1,5 @@
+scipy
+opencv_python
+tensorboard
+tqdm
+einops
