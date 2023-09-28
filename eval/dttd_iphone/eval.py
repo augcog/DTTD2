@@ -17,7 +17,7 @@ from torch.autograd import Variable
 sys.path.append("../../")
 
 from dataset.dttd_iphone.dataset import DTTDDataset, Borderlist
-from model.posenet import PoseNet
+from model.posefusion import PoseNet
 from utils.log import Logger
 from utils.file import get_checkpoint
 from utils.visualizer import visualize
@@ -31,6 +31,13 @@ def parse():
     parser.add_argument('--model', type=str, default = '',  help='path to resume model file')
     parser.add_argument('--result', type=str, default = 'eval_results',  help='Directory to save results')
     parser.add_argument('--visualize', action='store_true')
+    parser.add_argument('--debug', action='store_true')
+    parser.add_argument('--filter', action='store_true')
+    parser.add_argument('--base_latent', type=int, default = 256, help='base latent dim for unimodal encoder')
+    parser.add_argument('--embed_dim', type=int, default = 512, help='embedding dim for transformer encoder')
+    parser.add_argument('--fusion_block_num', type=int, default = 1, help='number of fusion block')
+    parser.add_argument('--layer_num_m', type=int, default = 4, help='layer num for modality fusion per block')
+    parser.add_argument('--layer_num_p', type=int, default = 2, help='layer num for point-to-point fuison per block')
     return parser.parse_args()
 
 def eval():
@@ -47,11 +54,18 @@ def eval():
             os.mkdir(os.path.join(opt.output, "visualize"))
         color_list = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 0, 255), (0, 255, 255), (255, 255, 255), (123, 10, 265), (245, 163, 101), (100, 100, 178)]
     # set model
-    estimator = PoseNet(num_points = dataset.sample_2d_pt_num, num_obj = dataset.num_obj) # pt_num:1000, num_obj: 20
+    estimator = PoseNet(num_points = dataset.sample_2d_pt_num, 
+                        num_obj = dataset.num_obj,  # pt_num:1000, num_obj: 20 
+                        base_latent=opt.base_latent, 
+                        embedding_dim=opt.embed_dim, 
+                        fusion_block_num=opt.fusion_block_num, 
+                        layer_num_m=opt.layer_num_m, layer_num_p=opt.layer_num_p, 
+                        filter_enhance=opt.filter) 
     estimator.cuda()
     opt.model = get_checkpoint(opt.model)
     estimator.load_state_dict(torch.load(opt.model, map_location=torch.device('cuda')))
     estimator.eval()
+
     # set logger
     logger = Logger(os.path.join(opt.output, "log.txt"))
     logger.log("evaluation of DTTDDataset...")
@@ -93,10 +107,14 @@ def eval():
                 img_crop = img_crop.view(1, 3, img_crop.size()[1], img_crop.size()[2])
                 
                 # predict
-                pred_r, pred_t, pred_c, _ = estimator(img_crop, cloud, sample, index)
-                
-                pred_r = pred_r / torch.norm(pred_r, dim=2).view(1, dataset.sample_2d_pt_num, 1)
+                pred_r, pred_t, pred_c, _, pt_recon, _ = estimator(img_crop, cloud, sample, index)
 
+                # debug
+                if opt.debug:
+                    save_att(estimator, img_crop, cloud, sample, f'debug/{i}_{idx}_')
+                    save_freq(estimator, cloud)
+
+                pred_r = pred_r / torch.norm(pred_r, dim=2).view(1, dataset.sample_2d_pt_num, 1)
                 pred_c = pred_c.view(1, dataset.sample_2d_pt_num)
                 pred_t = pred_t.view(1 * dataset.sample_2d_pt_num, 1, 3)
                 points = cloud.view(1 * dataset.sample_2d_pt_num, 1, 3)
@@ -107,10 +125,10 @@ def eval():
                 pred_t = (points + pred_t)[which_max[0]].view(-1).cpu().data.numpy()
                 pred_concat = np.append(pred_r, pred_t)
                 results.append(pred_concat.tolist())
+            
             except Exception as e:
                 logger.log(f"Detector Lost {itemid} at No.{i} keyframe. Error message: {e}")
                 results.append([0.0 for i in range(7)])
-        
         scio.savemat(os.path.join(opt.output, "mats", '%04d.mat' % i), {'poses':results})
         
         # visualize
@@ -155,7 +173,9 @@ def process_data(itemid, img, depth, label, meta, border_list, num_points=1000, 
         
     # crop image, depth and xy map with bbox, take the sample points
     img_crop = np.transpose(img[:, :, :3], (2, 0, 1))[:, rmin:rmax, cmin:cmax]
+    # Image.fromarray(np.transpose(img_crop, (1,2,0))).convert('RGB').save(f'rgb{itemid}.png')
     depth_crop = depth[rmin:rmax, cmin:cmax].flatten()[sample][:, np.newaxis].astype(np.float32) # (pt_num, )
+    # Image.fromarray(depth[rmin:rmax, cmin:cmax]).convert('RGB').save(f'depth{itemid}.png')
     xmap_crop = xmap[rmin:rmax, cmin:cmax].flatten()[sample][:, np.newaxis].astype(np.float32) # (pt_num, ) store y for sample points
     ymap_crop = ymap[rmin:rmax, cmin:cmax].flatten()[sample][:, np.newaxis].astype(np.float32) # (pt_num, ) store x for sample points
     
@@ -181,5 +201,41 @@ def process_data(itemid, img, depth, label, meta, border_list, num_points=1000, 
         "index": torch.LongTensor([itemid - 1])
     }
     
+def save_ptcld(xyz, fn):
+    with open(fn, "w") as f:
+        for i in range(len(xyz)):
+            f.write(f"v {xyz[i][0]} {xyz[i][1]} {xyz[i][2]} \n")
+
+def save_freq(estimator, x):
+    estimator.get_freq_domain(x)
+
+def save_att(estimator, img_crop, cloud, sample, fn_):
+    estimator.eval()
+    attn1, attn2 = estimator.get_attention_map(img_crop, cloud, sample)
+    hn1 = attn1.shape[0]
+    hn2 = attn2.shape[0]
+
+    draw_attn_map(fn_+'m_avg.png', attn1)
+    for i in range(hn1):
+        fn = fn_+f'm_{i}'+'.png'
+        draw_attn_map(fn, attn1, i)
+
+    draw_attn_map(fn_+'p_avg.png', attn2)
+    for i in range(hn2):
+        fn = fn_+f'p_{i}'+'.png'
+        draw_attn_map(fn, attn2, i)
+
+def draw_attn_map(fn, attn, head_idx=None):
+    if head_idx is not None:
+        attn = attn[head_idx]
+    else:
+        attn = torch.mean(attn, dim=0)
+    attn = np.asarray(attn.detach().cpu().numpy())
+    attn = 255*(attn - np.min(attn))/(np.max(attn) - np.min(attn))
+    image = Image.fromarray(attn)
+    if image.mode == 'F':
+        image = image.convert('RGB')
+    image.save(fn)
+
 if __name__ == "__main__":
     eval()
