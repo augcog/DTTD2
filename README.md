@@ -78,7 +78,7 @@ Robust-Digital-Twin-Tracking
 ### Run Estimation
 This repository contains scripts for 6dof object pose estimation (end-to-end coarse estimation). To run estimation, please make sure you have installed all the dependencies.
 
-![Group 165](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/1eea98b3-3d90-4afb-a23e-7874f5cad888)
+![Group 167](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/85f26229-e0cd-427e-8a70-73614ef71c26)
 
 To run dttd v2 (either training or evaluation), first download the dataset. It is recommended to create a soft link to `dataset/dttd_iphone/` folder using:
 ```bash
