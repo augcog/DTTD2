@@ -93,6 +93,9 @@ To run training of our method, you can use:
 ```bash
 python train.py --dataset dttd_iphone --output_dir ./result/train_result --device 0 --batch_size 1 --lr 8e-5 --min_lr 3e-5 --warm_epoch 3 --pretrain ./checkpoints/m8p4_filter_modelrecon.pth
 ```
+**flags**
+
+
 Our model is applible on YCBV_Dataset and DTTD v1 as well, please try following commands to run training of our method with other dataset:
 ```bash
 ```
