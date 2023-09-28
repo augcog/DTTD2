@@ -94,6 +94,8 @@ You can customize your own eval command, for example:
 python3 eval.py --dataset_root ../dataset/dttd_iphone/DTTD_IPhone_Dataset/root --model ../checkpoints/m8p4.pth --output eval_results --visualize 
 ```
 
+To visualize the attention map or/and the reduced geometric embeddings' distribution, you can add flag `--debug`.
+
 ### Eval
 This is the [ToolBox](https://github.com/yuxng/YCB_Video_toolbox) that we used for the experiment result evaluation and comparison.
 
