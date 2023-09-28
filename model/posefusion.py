@@ -8,7 +8,6 @@ from model.model_utils import *
 from model.model_utils import simplified_attention_forward, attn_diverse_loss
 from einops import rearrange
 
-######## UTILS ########
 class ModifiedResnet(nn.Module):
     def __init__(self, out_dim=128):
         super(ModifiedResnet, self).__init__()
@@ -73,8 +72,6 @@ class BaseFormer(nn.Module):
                     x = encoder_layer(x)
                 else:
                     attn_layer = encoder_layer.self_attn
-                    # for k, v in attn_layer.state_dict().items():
-                    #     print(k)
                     query = key = value = x.transpose(1, 0)
                     attn_map = simplified_attention_forward(
                         query, key, value, attn_layer.num_heads,
@@ -152,7 +149,6 @@ class FusionBlock(nn.Module):
             global_feat = global_feat.transpose(2, 1).contiguous()
             if require_attn: 
                 attn2 = self.point_fusion.get_attention_map(feat)
-            # global_feat_ = F.adaptive_max_pool1d(global_feat, 1).view(-1, self.embed_dim, 1).repeat(1, 1, num_points)
         if require_attn:
             return cross_feat, global_feat, attn1, attn2
         if self.require_adl:
@@ -193,7 +189,6 @@ class PoseFusion(nn.Module):
         return nn.Sequential(*layers)
 
 
-######## PoseNet ########
 class PoseNet(nn.Module):
     def __init__(self, num_points, num_obj, \
                  base_latent=256, embedding_dim=512, fusion_block_num=1, layer_num_m=2, layer_num_p=4, \
@@ -292,4 +287,4 @@ class PoseNet(nn.Module):
         pt_feat, pt_emb, _, _ = self.ptnet(x, None, None)
         pt_emb = self.ptnet.latent(pt_feat, pt_emb)
         assert self.filter_enhance is not None, "filter enhanced MLP is not applied."
-        freq_domain = self.filter_enhance.visualize_frequency_domain(pt_emb)
+        self.filter_enhance.visualize_frequency_domain(pt_emb)

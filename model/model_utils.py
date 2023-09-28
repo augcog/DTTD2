@@ -3,8 +3,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F 
 import einops
-from transformers.modeling_outputs import Seq2SeqLMOutput
-from PIL import Image
 import numpy as np
 
 
@@ -93,7 +91,6 @@ class FilterLayer(nn.Module):
         if return_filtered: return sequence_emb_fft
         hidden_states = self.out_dropout(sequence_emb_fft)
         hidden_states = self.LayerNorm(hidden_states + input_tensor)
-        # hidden_states = sequence_emb_fft + input_tensor
         return hidden_states.transpose(2, 1).contiguous()
     
     def visualize_frequency_domain(self, input_tensor):
@@ -109,7 +106,6 @@ class FilterLayer(nn.Module):
 
         input_tensor = input_tensor.cpu().detach().numpy()[0].T
         output_tensor = output_tensor.cpu().detach().numpy()[0]
-        sequence_length = input_tensor.shape[0]
 
         def save(input_tensor, fn, title):   
             # Perform SVD
@@ -260,7 +256,6 @@ def simplified_attention_forward(
     return embeddings, attn_map
 
 
-
 def attn_diverse_loss(attn, th=2):
     sim_sum = 0
     counter = 1e-6
@@ -276,6 +271,5 @@ def attn_diverse_loss(attn, th=2):
         sim_sum += sim
         counter += 1
     sim_sum = sim_sum / counter
-    # print(sim_sum)
     return sim_sum
 
