@@ -9,7 +9,7 @@ In this work, we bridge the existing gap towards mobile AR object tracking scena
 - [x] 09/27/23 Our dataset: [DTTDv2-IPhoneLiDAR](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd) is released, please check our [offical repository](https://github.com/augcog/DTTDv1) for data collection and annotation.
 - [x] 09/27/23 Our trained checkpoints for pose estimator are released [here](https://drive.google.com/drive/folders/128yIostfVzvbTQzoW3GO2MKEm62uTplp?usp=drive_link).
 
-### Dependency
+### Dependencies:
 
 Before running our pose estimation pipeline, you can activate a __conda__ environment where Python Version >= 3.8:
 ```
@@ -33,7 +33,7 @@ tqdm
 
 For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/KNN_CUDA. (Install KNN_CUDA requires CUDA environment, ensure that your CUDA version >= 10.2. Also, It only supports torch v1.0+.)
 
-### Load Dataset and Checkpoints
+### Load Dataset and Checkpoints:
 Download our [checkpoints](https://drive.google.com/drive/folders/128yIostfVzvbTQzoW3GO2MKEm62uTplp?usp=drive_link) and [datasets](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd), then organize the file structure:
 ```
 Robust-Digital-Twin-Tracking
@@ -75,7 +75,7 @@ Robust-Digital-Twin-Tracking
                     └── ...
 ```
 
-### Run Estimation
+### Run Estimation:
 This repository contains scripts for 6dof object pose estimation (end-to-end coarse estimation). To run estimation, please make sure you have installed all the dependencies.
 
 ![Group 167](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/85f26229-e0cd-427e-8a70-73614ef71c26)
@@ -99,10 +99,10 @@ python eval.py --dataset_root ./dataset/dttd_iphone/DTTD_IPhone_Dataset/root\
 To load model with filter-enhanced MLP, please add flag `--filter`.
 To visualize the attention map or/and the reduced geometric embeddings' distribution, you can add flag `--debug`.
 
-### Eval
+### Eval:
 This is the [ToolBox](https://github.com/yuxng/YCB_Video_toolbox) that we used for the experiment result evaluation and comparison.
 
-### Train
+### Train:
 To run training of our method, you can use:
 ```bash
 python train.py --device 0 \
@@ -126,7 +126,7 @@ python train.py --dataset ycb --output_dir ./result/train_result --device 0 --ba
 python train.py --dataset dttd --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-5 --min_lr 1e-6 --warm_epoch 1
 ```
 
-### Citation
+# Citation
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
 ```
 @InProceedings{DTTDv1,
