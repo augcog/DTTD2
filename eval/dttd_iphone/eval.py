@@ -63,7 +63,7 @@ def eval():
                         filter_enhance=opt.filter) 
     estimator.cuda()
     opt.model = get_checkpoint(opt.model)
-    estimator.load_state_dict(torch.load(opt.model, map_location=torch.device('cuda')))
+    estimator.load_state_dict(torch.load(opt.model, map_location=torch.device('cuda')), strict=True)
     estimator.eval()
 
     # set logger
