@@ -1,5 +1,5 @@
 # Towards Robust Mobile Digital-Twin Tracking via An RGBD-based Transformer Model and A Comprehensive Mobile Dataset
-This repository is the implementation code of the paper "Towards Robust Mobile Digital-Twin Tracking via An RGBD-based Transformer Model and A Comprehensive Mobile Dataset" [ [arxiv](https://arxiv.org/abs/2309.13570), website, [code](https://github.com/OpenARK-Berkeley/DigitalTwin-6DPose/edit/), [dataset](https://github.com/augcog/DTTDv1) ]. 
+This repository is the implementation code of the paper "Towards Robust Mobile Digital-Twin Tracking via An RGBD-based Transformer Model and A Comprehensive Mobile Dataset" [ [arxiv](https://arxiv.org/abs/2309.13570), website, [dataset](https://github.com/augcog/DTTDv1) ]. 
 
 ![Group 162](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/faea5212-f400-48b6-bbec-312b7887d2a1)
 
