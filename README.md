@@ -44,7 +44,6 @@ Robust-Digital-Twin-Tracking
                 ├── cameras
                 │   ├── az_camera1 (if you want to train our algorithm with DTTD v1)
                 │   ├── iphone14pro_camera1
-                │   ├── iphone_camera_data.json
                 │   └── ZED2 (to be released...)
                 ├── data
                 │   ├── scene1
