@@ -68,8 +68,8 @@ Robust-Digital-Twin-Tracking
                     └── ...
 ```
 
-### Estimation
-This is a repository that contains scripts for 6dof object pose estimation (coarse estimation). Please make sure you have installed all the above dependencies.
+### Run Estimation
+This repository contains scripts for 6dof object pose estimation (end-to-end coarse estimation). To run estimation, please make sure you have installed all the dependencies.
 
 To run dttd v2 (either training or evaluation), first download the dataset. It is recommended to create a soft link to `dataset/dttd_iphone/` folder using:
 ```bash
@@ -92,6 +92,9 @@ This is the [ToolBox](https://github.com/yuxng/YCB_Video_toolbox) that we used f
 To run training of our method, you can use:
 ```bash
 python train.py --dataset dttd_iphone --output_dir ./result/train_result --device 0 --batch_size 1 --lr 8e-5 --min_lr 3e-5 --warm_epoch 3 --pretrain ./checkpoints/m8p4_filter_modelrecon.pth
+```
+Our model is applible on YCBV_Dataset and DTTD v1 as well, please try following commands to run training of our method with other dataset:
+```bash
 ```
 
 ### Citation
