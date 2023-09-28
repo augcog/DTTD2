@@ -101,6 +101,7 @@ To run training of our method, you can use:
 python train.py --dataset dttd_iphone --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-6 --min_lr 1e-7 --warm_epoch 1 --pretrain ./checkpoints/m8p4_filter_modelrecon.pth
 ```
 To enable our method with depth robustifying modules, you can add flags `--filter_enhance` or/and `--recon_choice model`.
+
 To adjust the weight of Chamfer Distance Loss to 0.5, you can set flags `--reon_weight 0.5`.
 
 Our model is applicable on YCBV_Dataset and DTTD_v1 as well, please try following commands to run training of our method with other datasets (please ensure you download the dataset that you want to train on):
