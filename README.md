@@ -9,9 +9,16 @@ In this work, we bridge the existing gap towards mobile AR object tracking scena
 - [x] 09/27/23 Our dataset: [DTTDv2-IPhoneLiDAR](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd) is released, please check our [offical repository](https://github.com/OpenARK-Berkeley/DTTDv2-IPhoneLiDAR) for data collection and annotation.
 - [x] 09/27/23 Our trained checkpoints for pose estimator are released [here](https://drive.google.com/drive/folders/18laguqXN7b-WTFrHlRpbteqmE8oRF_8H?usp=drive_link).
 
-### Installation
+### Dependency
+
+Before running our pose estimation pipeline, you can activate a __conda__ environment where Python Version >= 3.8:
 ```
-python=3.8
+conda create --name [YOUR ENVIR NAME] python = [PYTHON VERSION]
+conda activate [YOUR ENVIR NAME]
+```
+
+then install all necessary packages:
+```
 torch
 torchvision
 torchaudio
@@ -82,7 +89,7 @@ bash eval.sh
 ```
 You can customize your own eval command, for example:
 ```bash
-python3 eval_ycb_gt.py --dataset_root ../../dataset/ycb/YCB_Video_Dataset --model ../../result/train_m8p4_adds/checkpoints/ --output eval_results --visualize 
+python3 eval.py --dataset_root ../dataset/dttd_iphone/DTTD_IPhone_Dataset/root --model ../checkpoints/m8p4.pth --output eval_results --visualize 
 ```
 
 ### Eval
@@ -91,13 +98,15 @@ This is the [ToolBox](https://github.com/yuxng/YCB_Video_toolbox) that we used f
 ### Train
 To run training of our method, you can use:
 ```bash
-python train.py --dataset dttd_iphone --output_dir ./result/train_result --device 0 --batch_size 1 --lr 8e-5 --min_lr 3e-5 --warm_epoch 3 --pretrain ./checkpoints/m8p4_filter_modelrecon.pth
+python train.py --dataset dttd_iphone --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-6 --min_lr 1e-7 --warm_epoch 1 --pretrain ./checkpoints/m8p4_filter_modelrecon.pth
 ```
-**flags**
+To enable our method with depth robustifying modules, you can add flags `--filter_enhance` or/and `--recon_choice model`.
+To adjust the weight of Chamfer Distance Loss to 0.5, you can set flags `--reon_weight 0.5`.
 
-
-Our model is applible on YCBV_Dataset and DTTD v1 as well, please try following commands to run training of our method with other dataset:
+Our model is applicable on YCBV_Dataset and DTTD_v1 as well, please try following commands to run training of our method with other datasets (please ensure you download the dataset that you want to train on):
 ```bash
+python train.py --dataset ycb --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-6 --min_lr 1e-7 --warm_epoch 1
+python train.py --dataset dttd --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-6 --min_lr 1e-7 --warm_epoch 1
 ```
 
 ### Citation
