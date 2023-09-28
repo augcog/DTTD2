@@ -6,7 +6,7 @@ This repository is the implementation code of the paper "Towards Robust Mobile D
 In this work, we bridge the existing gap towards mobile AR object tracking scenarios in a dual approach. At the algorithm level, we introduced a novel Transformer-based 6DoF  pose estimator, specifically designed to navigate the complexities introduced by noisy depth data, which is a common issue in mobile AR environments. At the dataset level, on the other hand, we expanded the scope of our previous work [DTTD](https://arxiv.org/abs/2302.05991) by introducing an innovative RGBD dataset captured using the iPhone 14 Pro, thus broadening the applicability of our approach to include iPhone sensor data. 
 
 ### Updates:
-- [x] 09/27/23 Our dataset: **DTTDv2-IPhoneLiDAR** is released, please check our [offical repository](https://github.com/OpenARK-Berkeley/DTTDv2-IPhoneLiDAR) for data collection and annotation.
+- [x] 09/27/23 Our dataset: [**DTTDv2-IPhoneLiDAR**](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd) is released, please check our [offical repository](https://github.com/OpenARK-Berkeley/DTTDv2-IPhoneLiDAR) for data collection and annotation.
 - [x] 09/27/23 Our trained **checkpoints** for pose estimator are released [here](https://drive.google.com/drive/folders/18laguqXN7b-WTFrHlRpbteqmE8oRF_8H?usp=drive_link).
 
 ### Installation
@@ -27,7 +27,7 @@ tqdm
 For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/KNN_CUDA. (Install KNN_CUDA requires CUDA environment, ensure that your CUDA version >= 10.2. Also, It only supports torch v1.0+.)
 
 ### Load Dataset and Checkpoints
-Download our checkpoints and datasets, then organize the file structure:
+Download our [checkpoints](https://drive.google.com/drive/folders/18laguqXN7b-WTFrHlRpbteqmE8oRF_8H?usp=drive_link) and [datasets](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd), then organize the file structure:
 ```
 Robust-Digital-Twin-Tracking
 ├── checkpoints
