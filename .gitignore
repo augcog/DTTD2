@@ -145,6 +145,7 @@ checkpoints/
 dataset/ycb/YCB_Video_Dataset
 
 # evaluation
+eval/*/debug/*
 eval/ycb/YCB_Video_toolbox/
 eval/ycb/eval_results*
 eval/dttd/eval_results*

@@ -197,7 +197,7 @@ class PoseFusion(nn.Module):
 class PoseNet(nn.Module):
     def __init__(self, num_points, num_obj, \
                  base_latent=256, embedding_dim=512, fusion_block_num=1, layer_num_m=2, layer_num_p=4, \
-                 filter_enhance=True, require_adl=True):
+                 recon_choice='depth', filter_enhance=True, require_adl=False):
         super(PoseNet, self).__init__()
         self.num_points = num_points
         self.num_obj = num_obj
@@ -211,8 +211,10 @@ class PoseNet(nn.Module):
         
         # unimodal embedding
         self.cnn = ModifiedResnet(base_latent)
+        self.recon_choice = recon_choice
         self.ptnet = PointCloudAE(256, num_points, base_latent)
-        self.filter_enhance = None if not filter_enhance else FilterLayer(num_points, base_latent, 0.0)
+        self.modelnet = PointCloudAE(256, num_points, base_latent) if recon_choice=='both' else None
+        self.filter_enhance = FilterLayer(num_points, base_latent, 0.0) if filter_enhance else None
         
         # modality and position interaction
         self.fusion = PoseFusion(base_latent, embedding_dim, \
@@ -236,25 +238,35 @@ class PoseNet(nn.Module):
         out_img = self.cnn(img) 
         bs, di, _, _ = out_img.size()
         emb = out_img.view(bs, di, -1)
+        robust_loss = 0
 
         # selection of rgb color embedding
         choose = choose.repeat(1, di, 1) 
         rgb_emb = torch.gather(emb, 2, choose).contiguous()
 
         # depth map / point cloud (embedding)
-        pt_feat, pt_emb, pt_recon, extra_loss = self.ptnet(x, None, recon_ref)
+        if self.recon_choice == 'both':
+            object_geo = recon_ref[1]
+            recon_ref = recon_ref[0]
+        pt_feat, pt_emb, pt_recon, cdl_0 = self.ptnet(x, None, recon_ref)
+        robust_loss+=cdl_0
         pt_emb = self.ptnet.latent(pt_feat, pt_emb)
         if self.filter_enhance is not None:
             pt_emb = self.filter_enhance(pt_emb)
-        
+        if self.recon_choice == 'both':
+            _, obj_emb, _, cdl_1 = self.modelnet(x, None, object_geo)
+            robust_loss+=cdl_1
+            pt_emb += obj_emb
         feat = self.fusion(rgb_emb, pt_emb) 
+
         if self.require_adl:
-            extra_loss += feat[1] 
+            adl = feat[1] 
             feat = feat[0]
+            robust_loss+=adl
             
         out_rx, out_tx, out_cx = self.posepred(feat, obj)
 
-        return out_rx, out_tx, out_cx, rgb_emb.detach(), pt_recon.detach(), extra_loss
+        return out_rx, out_tx, out_cx, rgb_emb.detach(), pt_recon.detach(), robust_loss
     
     def get_attention_map(self, img, x, choose):
         # rgb color embedding
@@ -275,4 +287,9 @@ class PoseNet(nn.Module):
         _, _, attn1, attn2 = self.fusion.layers[0](rgb_emb, pt_emb, require_attn=True)
     
         return attn1, attn2
- 
+    
+    def get_freq_domain(self, x):
+        pt_feat, pt_emb, _, _ = self.ptnet(x, None, None)
+        pt_emb = self.ptnet.latent(pt_feat, pt_emb)
+        assert self.filter_enhance is not None, "filter enhanced MLP is not applied."
+        freq_domain = self.filter_enhance.visualize_frequency_domain(pt_emb)

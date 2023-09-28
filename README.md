@@ -91,9 +91,12 @@ bash eval.sh
 ```
 You can customize your own eval command, for example:
 ```bash
-python3 eval.py --dataset_root ../dataset/dttd_iphone/DTTD_IPhone_Dataset/root --model ../checkpoints/m8p4.pth --output eval_results --visualize 
+python eval.py --dataset_root ./dataset/dttd_iphone/DTTD_IPhone_Dataset/root\
+                --model ./checkpoints/m2p1.pth\
+                --base_latent 256 --embed_dim 512 --fusion_block_num 1 --layer_num_m 2 --layer_num_p 1\
+                --visualize --output eval_results_m8p4_model_filtered_best\
 ```
-
+To load model with filter-enhanced MLP, please add flag `--filter`.
 To visualize the attention map or/and the reduced geometric embeddings' distribution, you can add flag `--debug`.
 
 ### Eval
@@ -102,16 +105,25 @@ This is the [ToolBox](https://github.com/yuxng/YCB_Video_toolbox) that we used f
 ### Train
 To run training of our method, you can use:
 ```bash
-python train.py --dataset dttd_iphone --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-6 --min_lr 1e-7 --warm_epoch 1 --pretrain ./checkpoints/m8p4_filter_modelrecon.pth
+python train.py --device 0 \
+    --dataset iphone --dataset_root ./dataset/dttd_iphone/DTTD_IPhone_Dataset/root --dataset_config ./dataset/dttd_iphone/dataset_config \
+    --output_dir ./result/result \
+    --base_latent 256 --embed_dim 512 --fusion_block_num 1 --layer_num_m 8 --layer_num_p 4 \
+    --recon_w 0.3 --recon_choice depth \
+    --loss adds --optim_batch 4 \
+    --start_epoch 0 \
+    --lr 1e-5 --min_lr 1e-6 --lr_rate 0.3 --decay_margin 0.033 --decay_rate 0.82 --nepoch 60 --warm_epoch 1 \
+    --filter_enhance \
 ```
+To train a smaller model, you can set flags `--layer_num_m 2 --layer_num_p 1`.
 To enable our method with depth robustifying modules, you can add flags `--filter_enhance` or/and `--recon_choice model`.
 
-To adjust the weight of Chamfer Distance Loss to 0.5, you can set flags `--reon_weight 0.5`.
+To adjust the weight of Chamfer Distance Loss to 0.5, you can set flags `--reon_w 0.5`.
 
 Our model is applicable on YCBV_Dataset and DTTD_v1 as well, please try following commands to run training of our method with other datasets (please ensure you download the dataset that you want to train on):
 ```bash
-python train.py --dataset ycb --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-6 --min_lr 1e-7 --warm_epoch 1
-python train.py --dataset dttd --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-6 --min_lr 1e-7 --warm_epoch 1
+python train.py --dataset ycb --output_dir ./result/train_result --device 0 --batch_size 1 --lr 8e-5 --min_lr 8e-6 --warm_epoch 1
+python train.py --dataset dttd --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-5 --min_lr 1e-6 --warm_epoch 1
 ```
 
 ### Citation

@@ -83,17 +83,52 @@ class FilterLayer(nn.Module):
         self.out_dropout = nn.Dropout(hidden_dropout_prob)
         self.LayerNorm = LayerNorm(hidden_size, eps=1e-12)
 
-    def forward(self, input_tensor):
+    def forward(self, input_tensor, return_filtered=False):
         input_tensor = input_tensor.transpose(2, 1).contiguous()
         batch, seq_len, hidden = input_tensor.shape
         x = torch.fft.rfft(input_tensor, dim=1, norm='ortho')
         weight = torch.view_as_complex(self.complex_weight)
         x = x * weight
         sequence_emb_fft = torch.fft.irfft(x, n=seq_len, dim=1, norm='ortho')
+        if return_filtered: return sequence_emb_fft
         hidden_states = self.out_dropout(sequence_emb_fft)
         hidden_states = self.LayerNorm(hidden_states + input_tensor)
         # hidden_states = sequence_emb_fft + input_tensor
         return hidden_states.transpose(2, 1).contiguous()
+    
+    def visualize_frequency_domain(self, input_tensor):
+        import matplotlib.pyplot as plt
+        import matplotlib
+        font = {'family' : 'Times New Roman',
+                'weight' : 'bold',
+                'size'   : 22}
+
+        matplotlib.rc('font', **font)
+        output_tensor = self.forward(input_tensor, return_filtered=True)
+        print(output_tensor.shape)
+
+        input_tensor = input_tensor.cpu().detach().numpy()[0].T
+        output_tensor = output_tensor.cpu().detach().numpy()[0]
+        sequence_length = input_tensor.shape[0]
+
+        def save(input_tensor, fn, title):   
+            # Perform SVD
+            U, s, V = np.linalg.svd(input_tensor, full_matrices=False)
+
+            projected_tensor = input_tensor@U[0,:]
+
+            plt.figure(figsize=(10, 6))
+            plt.hist(projected_tensor, bins=1000, edgecolor='red')
+
+            plt.xlabel('Geometric Features Reduced to 1-dimensional')
+            plt.ylabel('Probability Density')
+            plt.title(title)
+            plt.grid(True)
+            plt.savefig(fn)
+
+        save(input_tensor, 'before_filtered.png', 'Before')
+        save(output_tensor, 'after_filtered.png', 'After')
+
 
 #  Transformer Customization
 future_mask = torch.triu(torch.zeros([1024, 1024]).fill_(float("-inf")), 1)

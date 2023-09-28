@@ -1,1 +1,0 @@
-python train.py --dataset ycb --output_dir ./result/train_densefusion_gadd_finetune --device 0 --batch_size 1 --lr 0.00008 --w 0.012 --pretrain best.pth

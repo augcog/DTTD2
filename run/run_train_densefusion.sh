@@ -1,1 +1,0 @@
-python train.py --dataset ycb --output_dir ./result/train_densefusion_adds_test --device 1 --batch_size 1 --lr 0.00008 --pretrain best.pth
