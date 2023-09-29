@@ -126,7 +126,7 @@ python train.py --dataset ycb --output_dir ./result/train_result --device 0 --ba
 python train.py --dataset dttd --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-5 --min_lr 1e-6 --warm_epoch 1
 ```
 
-# Citation
+### Citation
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
 ```
 @misc{DTTDv2,
