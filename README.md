@@ -137,6 +137,7 @@ If our work is useful or relevant to your research, please kindly recognize our 
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+
 @InProceedings{DTTDv1,
     author    = {Feng, Weiyu and Zhao, Seth Z. and Pan, Chuanyu and Chang, Adam and Chen, Yichen and Wang, Zekun and Yang, Allen Y.},
     title     = {Digital Twin Tracking Dataset (DTTD): A New RGB+Depth 3D Dataset for Longer-Range Object Tracking Applications},
