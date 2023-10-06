@@ -7,7 +7,7 @@ In this work, we bridge the existing gap towards mobile AR object tracking scena
 
 ### Updates:
 - [x] 09/28/23 Our trained checkpoints for pose estimator are released [here](https://drive.google.com/drive/folders/128yIostfVzvbTQzoW3GO2MKEm62uTplp?usp=drive_link).
-- [x] 09/27/23 Our dataset: [DTTDv2-IPhoneLiDAR](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd) is released, please check our [offical repository](https://github.com/augcog/DTTDv1) for data collection and annotation.
+- [x] 09/27/23 Our dataset: [DTTDv2-IPhoneLiDAR](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd) is released, please check our [official repository](https://github.com/augcog/DTTDv1) for data collection and annotation.
 
 ### Dependencies:
 
