@@ -130,7 +130,7 @@ python train.py --dataset dttd --output_dir ./result/train_result --device 0 --b
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
 ```
 @misc{DTTDv2,
-      title={Towards Robust Mobile Digital-Twin Tracking via An RGBD-based Transformer Model and A Comprehensive Mobile Dataset}, 
+      title={Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset}, 
       author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Tianjian Xu and Weiyu Feng and Allen Y. Yang},
       year={2023},
       eprint={2309.13570},
