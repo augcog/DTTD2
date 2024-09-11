@@ -1,12 +1,12 @@
 # Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset
-This repository is the implementation code of the paper "Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset" [ [arXiv](https://arxiv.org/abs/2309.13570), [dataset](https://github.com/augcog/DTTDv1), [poster](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796)]. 
+This repository is the implementation code of the 2024 ICML workshop paper "Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset" [ [arXiv](https://arxiv.org/abs/2309.13570), [dataset](https://github.com/augcog/DTTDv1), [poster](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796)]. 
 
 ![Group 162](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/faea5212-f400-48b6-bbec-312b7887d2a1)
 
 In this work, we bridge the existing gap towards mobile AR object tracking scenarios in a dual approach. At the algorithm level, we introduced a novel Transformer-based 6DoF  pose estimator, specifically designed to navigate the complexities introduced by noisy depth data, which is a common issue in mobile AR environments. At the dataset level, on the other hand, we expanded the scope of our previous work [DTTD](https://arxiv.org/abs/2302.05991) by introducing an innovative RGBD dataset captured using the iPhone 14 Pro, thus broadening the applicability of our approach to include iPhone sensor data. 
 
 ### Updates:
-- Our work has been accepted at 2024 ICML workshop: Data-centric Machine Learning Research. [demo video](https://icml.cc/virtual/2024/36411), [openreview](https://openreview.net/forum?id=X7lBl0CPdw)
+- 06/17/24 Our work has been accepted at 2024 ICML workshop: Data-centric Machine Learning Research. [demo video](https://icml.cc/virtual/2024/36411), [openreview](https://openreview.net/forum?id=X7lBl0CPdw)
 - [x] 09/28/23 Our trained checkpoints for pose estimator are released [here](https://drive.google.com/drive/folders/128yIostfVzvbTQzoW3GO2MKEm62uTplp?usp=drive_link).
 - [x] 09/27/23 Our dataset: [DTTDv2-IPhoneLiDAR](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd) is released, please check our [official repository](https://github.com/augcog/DTTDv1) for data collection and annotation.
 
