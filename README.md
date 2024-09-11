@@ -10,6 +10,29 @@ In this work, we bridge the existing gap towards mobile AR object tracking scena
 - [x] 09/28/23 Our trained checkpoints for pose estimator are released [here](https://drive.google.com/drive/folders/128yIostfVzvbTQzoW3GO2MKEm62uTplp?usp=drive_link).
 - [x] 09/27/23 Our dataset: [DTTDv2-IPhoneLiDAR](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd) is released, please check our [official repository](https://github.com/augcog/DTTDv1) for data collection and annotation.
 
+
+### Citation
+If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
+```
+@misc{DTTDv2,
+      title={Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset}, 
+      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Tianjian Xu and Weiyu Feng and Allen Y. Yang},
+      year={2023},
+      eprint={2309.13570},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+
+@InProceedings{DTTDv1,
+    author    = {Feng, Weiyu and Zhao, Seth Z. and Pan, Chuanyu and Chang, Adam and Chen, Yichen and Wang, Zekun and Yang, Allen Y.},
+    title     = {Digital Twin Tracking Dataset (DTTD): A New RGB+Depth 3D Dataset for Longer-Range Object Tracking Applications},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2023},
+    pages     = {3288-3297}
+}
+```
+
 ### Dependencies:
 
 Before running our pose estimation pipeline, you can activate a __conda__ environment where Python Version >= 3.8:
@@ -127,26 +150,5 @@ python train.py --dataset ycb --output_dir ./result/train_result --device 0 --ba
 python train.py --dataset dttd --output_dir ./result/train_result --device 0 --batch_size 1 --lr 1e-5 --min_lr 1e-6 --warm_epoch 1
 ```
 
-### Citation
-If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
-```
-@misc{DTTDv2,
-      title={Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset}, 
-      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Tianjian Xu and Weiyu Feng and Allen Y. Yang},
-      year={2023},
-      eprint={2309.13570},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-
-@InProceedings{DTTDv1,
-    author    = {Feng, Weiyu and Zhao, Seth Z. and Pan, Chuanyu and Chang, Adam and Chen, Yichen and Wang, Zekun and Yang, Allen Y.},
-    title     = {Digital Twin Tracking Dataset (DTTD): A New RGB+Depth 3D Dataset for Longer-Range Object Tracking Applications},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-    month     = {June},
-    year      = {2023},
-    pages     = {3288-3297}
-}
-```
 
 
