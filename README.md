@@ -14,13 +14,14 @@ In this work, we bridge the existing gap towards mobile AR object tracking scena
 ### Citation
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
 ```
-@misc{DTTDv2,
-      title={Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset}, 
-      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Tianjian Xu and Weiyu Feng and Allen Y. Yang},
-      year={2023},
+@misc{huang2024robust6dofposeestimation,
+      title={Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset}, 
+      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Chenfeng Xu and Kathy Zhuang and Tianjian Xu and Weiyu Feng and Allen Y. Yang},
+      year={2024},
       eprint={2309.13570},
       archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2309.13570}, 
 }
 
 @InProceedings{DTTDv1,
