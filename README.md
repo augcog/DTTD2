@@ -7,7 +7,7 @@ In this work, we bridge the existing gap towards mobile AR object tracking scena
 
 ### Updates:
 - [11/05/24] We extended DTTD for specific **grasping** and **insertion** tasks using FANUC robotic arm, released [here](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance). Feel free to contact zixun@berkeley.edu and xiang_zhang_98@berkeley.edu for details on this dataset extension.
-- [11/05/24] The DTTD-Mobile dataset will be migrated to huggingface due to our Google Drive storage limitation, check [here](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone/tree/main).
+- [11/05/24] The DTTD-Mobile dataset has been migrated to huggingface due to our Google Drive storage issues, check [here](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone/tree/main).
 - [09/10/24] Our **MoCap data pipeline** has been released, check [here](https://github.com/OpenARK-Berkeley/DTTDv2-IPhoneLiDAR) (iPhone-ARKit-based version) for your customized data collection and annotation. For the release of our **data capture app** for iPhone, check [here](https://github.com/OpenARK-Berkeley/iphone-capture-app). For our previous released Azure-based version, check [here](https://github.com/augcog/DTTDv1).
 - [06/17/24] Our work has been accepted at 2024 ICML workshop: Data-centric Machine Learning Research. [demo video](https://icml.cc/virtual/2024/36411), [openreview](https://openreview.net/forum?id=X7lBl0CPdw)
 - [x] [09/28/23] Our trained **checkpoints** for pose estimator are released [here](https://drive.google.com/drive/folders/128yIostfVzvbTQzoW3GO2MKEm62uTplp?usp=drive_link).
