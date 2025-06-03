@@ -28,7 +28,7 @@ If our work is useful or relevant to your research, please kindly recognize our 
 ```
 @misc{huang2024robust6dofposeestimation,
       title={Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset}, 
-      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Chenfeng Xu and Kathy Zhuang and Tianjian Xu and Weiyu Feng and Allen Y. Yang},
+      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Allen Y. Yang},
       year={2024},
       eprint={2309.13570},
       archivePrefix={arXiv},
