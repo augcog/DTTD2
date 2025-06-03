@@ -12,7 +12,7 @@ This repository is the implementation code of the 2025 CVPR workshop (Mobile AI)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-subcentimeter-accuracy-digital-twin/6d-pose-estimation-on-dttd2)](https://paperswithcode.com/sota/6d-pose-estimation-on-dttd2?p=towards-subcentimeter-accuracy-digital-twin)
 
 
-We introduce DTTD-Net, a new benchmark built on real-world data captured from mobile devices. We evaluate several popular methods—including BundleSDF, ES6D, MegaPose, and DenseFusion—and highlight their limitations in this challenging setting. To go a step further, we propose a Fourier-enhanced MLP and a two-stage attention-based fusion across RGB and depth, making 6DoF pose estimation more robust—even when the input is noisy, blurry, or partially occluded.
+We introduce DTTD-Mobile, a new benchmark built on real-world data captured from mobile devices. We evaluate several popular methods—including BundleSDF, ES6D, MegaPose, and DenseFusion—and highlight their limitations in this challenging setting. To go a step further, we propose DTTD-Net with a Fourier-enhanced MLP and a two-stage attention-based fusion across RGB and depth, making 6DoF pose estimation more robust—even when the input is noisy, blurry, or partially occluded.
 
 ### Updates:
 - [05/01/25] The archival version of this work will be presented at 2025 CVPRW: Mobile AI.
