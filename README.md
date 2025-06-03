@@ -1,11 +1,11 @@
 # DTTDNet: Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset
+[![arXiv](https://img.shields.io/badge/arXiv-2406.00001-b31b1b.svg)](https://arxiv.org/abs/2309.13570)
+[![Paper with Code](https://img.shields.io/badge/Paper%20with%20Code-📊-blue)](https://paperswithcode.com/dataset/dttd2)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A7%97-HuggingFace-yellow)](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone/tree/main)
+[![👀 CVPRW 2025 MAI (TBD)](https://img.shields.io/badge/CVPR-2025-blue)](https://ai-benchmark.com/workshops/mai/2025/)
+[![🧠 ICMLW 2024 DMLR](https://img.shields.io/badge/ICML-2025-green)](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796)
+
 This repository is the implementation code of the 2025 CVPR workshop (Mobile AI) paper "Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset" 
-[![arXiv](https://img.shields.io/badge/arXiv-2406.00001-b31b1b.svg)](https://arxiv.org/abs/2406.00001)
-[![Paper with Code](https://img.shields.io/badge/Paper%20with%20Code-📊-blue)](https://paperswithcode.com/paper/your-paper-title)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A7%97-HuggingFace-yellow)](https://huggingface.co/spaces/username/demo)
-
-[[arXiv](https://arxiv.org/abs/2309.13570), [project page](https://openark-berkeley.github.io/DTTDNet/), [dataset](https://paperswithcode.com/dataset/dttd2), [icmlw poster 2024](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796), [cvprw 2025 tbd](https://ai-benchmark.com/workshops/mai/2025/)]. 
-
 ![Group 162](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/faea5212-f400-48b6-bbec-312b7887d2a1)
 
 ### Are current 3D object tracking methods truely robust enough for low-fidelity depth sensors like the iPhone LiDAR? Checkout this [Leaderboard](https://paperswithcode.com/sota/3d-object-detection-on-dttd2).
