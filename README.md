@@ -10,6 +10,7 @@ This repository is the implementation code of the 2025 CVPR workshop (Mobile AI)
 
 ### Are current 3D object tracking methods truely robust enough for low-fidelity depth sensors like the iPhone LiDAR? 
 Checkout this Leaderboard: [![Paper with Code](https://img.shields.io/badge/Paper%20with%20Code-📊-blue)](https://paperswithcode.com/sota/6d-pose-estimation-on-dttd2).
+
 We introduce DTTD-Net, a new benchmark built on real-world data captured from mobile devices. We evaluate several popular methods—including BundleSDF, ES6D, MegaPose, and DenseFusion—and highlight their limitations in this challenging setting. To go a step further, we propose a Fourier-enhanced MLP and a two-stage attention-based fusion across RGB and depth, making 6DoF pose estimation more robust—even when the input is noisy, blurry, or partially occluded.
 
 ### Updates:
