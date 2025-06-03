@@ -1,5 +1,5 @@
 # DTTDNet: Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset
-This repository is the implementation code of the 2025 CVPR workshop (Mobile AI) paper "Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset" [[arXiv](https://arxiv.org/abs/2309.13570), [project page](https://openark-berkeley.github.io/DTTDNet/), [dataset](https://paperswithcode.com/dataset/dttd2), [icml poster 2024](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796), [cvprw 2025 tbd](https://ai-benchmark.com/workshops/mai/2025/)]. 
+This repository is the implementation code of the 2025 CVPR workshop (Mobile AI) paper "Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset" [[arXiv](https://arxiv.org/abs/2309.13570), [project page](https://openark-berkeley.github.io/DTTDNet/), [dataset](https://paperswithcode.com/dataset/dttd2), [icmlw poster 2024](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796), [cvprw 2025 tbd](https://ai-benchmark.com/workshops/mai/2025/)]. 
 
 ![Group 162](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/faea5212-f400-48b6-bbec-312b7887d2a1)
 
