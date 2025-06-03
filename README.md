@@ -1,5 +1,5 @@
 # DTTDNet: Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset
-[![arXiv](https://img.shields.io/badge/arXiv-2309.13570.svg)](https://arxiv.org/abs/2309.13570)
+[![arXiv](https://img.shields.io/badge/arXiv-2309.13570-b31b1b.svg)](https://arxiv.org/abs/2309.13570)
 [![Paper with Code](https://img.shields.io/badge/Paper%20with%20Code-📊-blue)](https://paperswithcode.com/dataset/dttd2)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A7%97-HuggingFace-yellow)](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone/tree/main)
 [![👀 CVPRW 2025 MAI (TBD)](https://img.shields.io/badge/CVPR-2025-blue)](https://ai-benchmark.com/workshops/mai/2025/)
