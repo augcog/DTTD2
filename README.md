@@ -14,6 +14,10 @@ This repository is the implementation code of the 2025 CVPR workshop (Mobile AI)
 We introduce DTTD-Mobile, a new benchmark built on real-world data captured from mobile devices. We evaluate several popular methods—including BundleSDF, ES6D, MegaPose, and DenseFusion—and highlight their limitations in this challenging setting. To go a step further, we propose DTTD-Net with a Fourier-enhanced MLP and a two-stage attention-based fusion across RGB and depth, making 6DoF pose estimation more robust—even when the input is noisy, blurry, or partially occluded.
 
 ### Dataset: Checkout [**DTTD-Mobile**](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone) and the [**Robotics Dataset Extension**](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance).
+<video width="720" controls>
+  <source src="https://youtu.be/kd66u7E74dE" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ### Updates:
 - [05/01/25] The archival version of this work will be presented at 2025 CVPRW: Mobile AI.
@@ -27,21 +31,12 @@ We introduce DTTD-Mobile, a new benchmark built on real-world data captured from
 ### Citation
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
 ```
-@inproceedings{DTTDv2,
+@inproceedings{huang2025robust,
   title={Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset},
   author={Huang, Zixun and Yao, Keling and Zhao, Zhihao and Pan, Chuanyu and Yang, Allen},
   booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
   pages={1848--1857},
   year={2025}
-}
-
-@InProceedings{DTTDv1,
-    author    = {Feng, Weiyu and Zhao, Seth Z. and Pan, Chuanyu and Chang, Adam and Chen, Yichen and Wang, Zekun and Yang, Allen Y.},
-    title     = {Digital Twin Tracking Dataset (DTTD): A New RGB+Depth 3D Dataset for Longer-Range Object Tracking Applications},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-    month     = {June},
-    year      = {2023},
-    pages     = {3288-3297}
 }
 ```
 
