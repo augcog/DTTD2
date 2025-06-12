@@ -19,7 +19,7 @@ We introduce DTTD-Mobile, a new benchmark built on real-world data captured from
 
 https://github.com/user-attachments/assets/73aae3b5-64cf-4889-aa47-8784015267a0
 
-
+Checkout [**DTTD-Mobile**](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone) and the [**Robotics Dataset Extension**](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance).
 
 ### Updates:
 - [05/01/25] The archival version of this work will be presented at 2025 CVPRW: Mobile AI.
