@@ -14,6 +14,13 @@ This repository is the implementation code of the 2025 CVPR workshop (Mobile AI)
 
 We introduce DTTD-Mobile, a new benchmark built on real-world data captured from mobile devices. We evaluate several popular methods—including BundleSDF, ES6D, MegaPose, and DenseFusion—and highlight their limitations in this challenging setting. To go a step further, we propose DTTD-Net with a Fourier-enhanced MLP and a two-stage attention-based fusion across RGB and depth, making 6DoF pose estimation more robust—even when the input is noisy, blurry, or partially occluded.
 
+### Dataset:
+
+
+https://github.com/user-attachments/assets/73aae3b5-64cf-4889-aa47-8784015267a0
+
+
+
 ### Updates:
 - [05/01/25] The archival version of this work will be presented at 2025 CVPRW: Mobile AI.
 - [11/05/24] We extended DTTD for specific **grasping** and **insertion** tasks using FANUC robotic arm, released [here](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance). Feel free to contact zixun@berkeley.edu and xiang_zhang_98@berkeley.edu for details on this dataset extension.
