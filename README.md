@@ -4,22 +4,21 @@
 [![DTTD-Mobile Dataset](https://img.shields.io/badge/%F0%9F%A7%97-HuggingFace-yellow)](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone)
 [![👀 CVPRW 2025 MAI (TBD)](https://img.shields.io/badge/CVPR-2025-blue)](https://ai-benchmark.com/workshops/mai/2025/)
 [![🧠 ICMLW 2024 DMLR](https://img.shields.io/badge/ICML-2024-green)](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-subcentimeter-accuracy-digital-twin/6d-pose-estimation-on-dttd2)](https://paperswithcode.com/sota/6d-pose-estimation-on-dttd2?p=towards-subcentimeter-accuracy-digital-twin)
 
 This repository is the implementation code of the 2025 CVPR workshop (Mobile AI) paper "Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset" 
 ![Group 162](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/faea5212-f400-48b6-bbec-312b7887d2a1)
 
-### Are current 3D object tracking methods truely robust enough for low-fidelity depth sensors like the iPhone LiDAR? Checkout the Leaderboard. 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-subcentimeter-accuracy-digital-twin/6d-pose-estimation-on-dttd2)](https://paperswithcode.com/sota/6d-pose-estimation-on-dttd2?p=towards-subcentimeter-accuracy-digital-twin)
-
+### Are current 3D object tracking methods truely robust enough for low-fidelity depth sensors like the iPhone LiDAR?
 
 We introduce DTTD-Mobile, a new benchmark built on real-world data captured from mobile devices. We evaluate several popular methods—including BundleSDF, ES6D, MegaPose, and DenseFusion—and highlight their limitations in this challenging setting. To go a step further, we propose DTTD-Net with a Fourier-enhanced MLP and a two-stage attention-based fusion across RGB and depth, making 6DoF pose estimation more robust—even when the input is noisy, blurry, or partially occluded.
 
-### Dataset:
+### Dataset: Checkout [**DTTD-Mobile**](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone) and the [**Robotics Dataset Extension**](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance).
 
 
 https://github.com/user-attachments/assets/73aae3b5-64cf-4889-aa47-8784015267a0
 
-Checkout [**DTTD-Mobile**](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone) and the [**Robotics Dataset Extension**](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance).
+
 
 ### Updates:
 - [05/01/25] The archival version of this work will be presented at 2025 CVPRW: Mobile AI.
