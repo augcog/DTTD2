@@ -15,11 +15,6 @@ We introduce DTTD-Mobile, a new benchmark built on real-world data captured from
 
 ### Dataset: Checkout [**DTTD-Mobile**](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone) and the [**Robotics Dataset Extension**](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance).
 
-<video width="720" controls>
-  <source src="assets/data_demo_video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
 ### Updates:
 - [05/01/25] The archival version of this work will be presented at 2025 CVPRW: Mobile AI.
 - [11/05/24] We extended DTTD for specific **grasping** and **insertion** tasks using FANUC robotic arm, released [here](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance). Feel free to contact zixun@berkeley.edu and xiang_zhang_98@berkeley.edu for details on this dataset extension.
@@ -32,14 +27,12 @@ We introduce DTTD-Mobile, a new benchmark built on real-world data captured from
 ### Citation
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
 ```
-@misc{huang2024robust6dofposeestimation,
-      title={Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset}, 
-      author={Zixun Huang and Keling Yao and Seth Z. Zhao and Chuanyu Pan and Allen Y. Yang},
-      year={2024},
-      eprint={2309.13570},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2309.13570}, 
+@inproceedings{DTTDv2,
+  title={Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset},
+  author={Huang, Zixun and Yao, Keling and Zhao, Zhihao and Pan, Chuanyu and Yang, Allen},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={1848--1857},
+  year={2025}
 }
 
 @InProceedings{DTTDv1,
