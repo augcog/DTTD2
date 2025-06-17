@@ -28,12 +28,13 @@ We introduce DTTD-Mobile, a new benchmark built on real-world data captured from
 ### Citation
 If our work is useful or relevant to your research, please kindly recognize our contributions by citing our papers:
 ```
-@inproceedings{huang2025robust,
-  title={Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset},
-  author={Huang, Zixun and Yao, Keling and Zhao, Zhihao and Pan, Chuanyu and Yang, Allen},
-  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
-  pages={1848--1857},
-  year={2025}
+@InProceedings{dttd2,
+    author    = {Huang, Zixun and Yao, Keling and Zhao, Zhihao and Pan, Chuanyu and Yang, Allen},
+    title     = {Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR) Workshops},
+    month     = {June},
+    year      = {2025},
+    pages     = {1848-1857}
 }
 ```
 
