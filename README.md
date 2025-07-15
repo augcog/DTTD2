@@ -4,7 +4,7 @@
 [![DTTD-Mobile Dataset](https://img.shields.io/badge/%F0%9F%A7%97-HuggingFace-yellow)](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone)
 [![👀 CVPRW 2025 MAI](https://img.shields.io/badge/CVPR-2025-blue)](https://openaccess.thecvf.com/content/CVPR2025W/MAI/html/Huang_Robust_6DoF_Pose_Estimation_Against_Depth_Noise_and_a_Comprehensive_CVPRW_2025_paper.html)
 [![🧠 ICMLW 2024 DMLR](https://img.shields.io/badge/ICML-2024-green)](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-subcentimeter-accuracy-digital-twin/6d-pose-estimation-on-dttd2)](https://paperswithcode.com/sota/6d-pose-estimation-on-dttd2?p=towards-subcentimeter-accuracy-digital-twin)
+
 
 This repository is the implementation code of the 2025 CVPR workshop (Mobile AI) paper "Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset" 
 ![Group 162](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/faea5212-f400-48b6-bbec-312b7887d2a1)
@@ -35,6 +35,14 @@ If our work is useful or relevant to your research, please kindly recognize our 
     month     = {June},
     year      = {2025},
     pages     = {1848-1857}
+}
+@InProceedings{dttd1,
+    author    = {Feng, Weiyu and Zhao, Seth Z. and Pan, Chuanyu and Chang, Adam and Chen, Yichen and Wang, Zekun and Yang, Allen Y.},
+    title     = {Digital Twin Tracking Dataset (DTTD): A New RGB+Depth 3D Dataset for Longer-Range Object Tracking Applications},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2023},
+    pages     = {3288-3297}
 }
 ```
 
