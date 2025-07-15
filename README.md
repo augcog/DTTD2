@@ -2,7 +2,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2309.13570-b31b1b.svg)](https://arxiv.org/abs/2309.13570)
 [![Paper with Code](https://img.shields.io/badge/Paper%20with%20Code-📊-blue)](https://paperswithcode.com/dataset/dttd2)
 [![DTTD-Mobile Dataset](https://img.shields.io/badge/%F0%9F%A7%97-HuggingFace-yellow)](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone)
-[![👀 CVPRW 2025 MAI (TBD)](https://img.shields.io/badge/CVPR-2025-blue)](https://ai-benchmark.com/workshops/mai/2025/)
+[![👀 CVPRW 2025 MAI](https://img.shields.io/badge/CVPR-2025-blue)](https://openaccess.thecvf.com/content/CVPR2025W/MAI/html/Huang_Robust_6DoF_Pose_Estimation_Against_Depth_Noise_and_a_Comprehensive_CVPRW_2025_paper.html)
 [![🧠 ICMLW 2024 DMLR](https://img.shields.io/badge/ICML-2024-green)](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-subcentimeter-accuracy-digital-twin/6d-pose-estimation-on-dttd2)](https://paperswithcode.com/sota/6d-pose-estimation-on-dttd2?p=towards-subcentimeter-accuracy-digital-twin)
 
@@ -17,7 +17,7 @@ We introduce DTTD-Mobile, a new benchmark built on real-world data captured from
 
 
 ### Updates:
-- [05/01/25] The archival version of this work will be presented at 2025 CVPRW: Mobile AI.
+- [05/01/25] The [archival version](https://openaccess.thecvf.com/content/CVPR2025W/MAI/html/Huang_Robust_6DoF_Pose_Estimation_Against_Depth_Noise_and_a_Comprehensive_CVPRW_2025_paper.html) of this work will be presented at 2025 CVPRW: Mobile AI.
 - [11/05/24] We extended DTTD for specific **grasping** and **insertion** tasks using FANUC robotic arm, released [here](https://huggingface.co/datasets/ZixunH/DTTD3_Impedance). Feel free to contact zixun@berkeley.edu and xiang_zhang_98@berkeley.edu for details on this dataset extension.
 - [11/05/24] The DTTD-Mobile dataset has been migrated to huggingface due to our Google Drive storage issues, check [here](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone).
 - [09/10/24] Our **MoCap data pipeline** has been released, check [here](https://github.com/OpenARK-Berkeley/DTTDv2-IPhoneLiDAR) (iPhone-ARKit-based version) for your customized data collection and annotation. For the release of our **data capture app** for iPhone, check [here](https://github.com/OpenARK-Berkeley/iphone-capture-app). For our previous released Azure-based version, check [here](https://github.com/augcog/DTTDv1).
