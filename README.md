@@ -60,7 +60,7 @@ torch
 torchvision
 torchaudio
 numpy
-eniops
+einops
 pillow
 scipy
 opencv_python
