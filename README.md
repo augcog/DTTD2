@@ -30,7 +30,7 @@ If our work is useful or relevant to your research, please kindly recognize our 
 ```
 @InProceedings{dttd2,
     author    = {Huang, Zixun and Yao, Keling and Zhao, Zhihao and Pan, Chuanyu and Yang, Allen},
-    title     = {Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset},
+    title     = {DTTDNet: Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset},
     booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR) Workshops},
     month     = {June},
     year      = {2025},
