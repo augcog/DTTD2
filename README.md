@@ -6,7 +6,7 @@
 [![🧠 ICMLW 2024 DMLR](https://img.shields.io/badge/ICML-2024-green)](https://icml.cc/media/PosterPDFs/ICML%202024/36411.png?t=1721891810.2840796)
 
 
-This repository is the implementation code of the 2025 CVPR workshop (Mobile AI) paper "Robust Digital-Twin Localization via An RGBD-based Transformer Network and A Comprehensive Evaluation on a Mobile Dataset" 
+This repository is the implementation code of the 2025 CVPR workshop (Mobile AI) paper "Robust 6DoF Pose Estimation Against Depth Noise and a Comprehensive Evaluation on a Mobile Dataset" 
 ![Group 162](https://github.com/OpenARK-Berkeley/Robust-Digital-Twin-Tracking/assets/106426767/faea5212-f400-48b6-bbec-312b7887d2a1)
 
 ### Are current 3D object tracking methods truely robust enough for low-fidelity depth sensors like the iPhone LiDAR?
