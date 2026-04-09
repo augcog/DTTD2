@@ -71,7 +71,7 @@ tqdm
 For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/KNN_CUDA. (Install KNN_CUDA requires CUDA environment, ensure that your CUDA version >= 10.2. Also, It only supports torch v1.0+.)
 
 ### Load Dataset and Checkpoints:
-Download our [checkpoints](https://drive.google.com/drive/folders/1skhfVJWNJaX_xicRORBtQ3BRYCxh_TOa?usp=sharing) and [datasets](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd), then organize the file structure:
+Download our [checkpoints](https://drive.google.com/drive/folders/1skhfVJWNJaX_xicRORBtQ3BRYCxh_TOa?usp=sharing) and [datasets](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone/tree/main), then organize the file structure:
 ```
 Robust-Digital-Twin-Tracking
 ├── checkpoints
