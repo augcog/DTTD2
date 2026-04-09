@@ -22,7 +22,7 @@ We introduce DTTD-Mobile, a new benchmark built on real-world data captured from
 - [11/05/24] The DTTD-Mobile dataset has been migrated to huggingface due to our Google Drive storage issues, check [here](https://huggingface.co/datasets/ZixunH/DTTD2-IPhone).
 - [09/10/24] Our **MoCap data pipeline** has been released, check [here](https://github.com/OpenARK-Berkeley/DTTDv2-IPhoneLiDAR) (iPhone-ARKit-based version) for your customized data collection and annotation. For the release of our **data capture app** for iPhone, check [here](https://github.com/OpenARK-Berkeley/iphone-capture-app). For our previous released Azure-based version, check [here](https://github.com/augcog/DTTDv1).
 - [06/17/24] Our work has been accepted at 2024 ICML workshop: Data-centric Machine Learning Research. [demo video](https://icml.cc/virtual/2024/36411), [openreview](https://openreview.net/forum?id=X7lBl0CPdw)
-- [x] [09/28/23] Our trained **checkpoints** for pose estimator are released [here](https://drive.google.com/drive/folders/128yIostfVzvbTQzoW3GO2MKEm62uTplp?usp=drive_link).
+- [x] [09/28/23] Our trained **checkpoints** for pose estimator are released [here](https://drive.google.com/drive/folders/1skhfVJWNJaX_xicRORBtQ3BRYCxh_TOa?usp=sharing).
 - [x] [09/27/23] Our **dataset**: [DTTD-Mobile](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd) is released.
 
 ### Citation
@@ -71,7 +71,7 @@ tqdm
 For knn module used in ADD-S loss, install KNN_CUDA: https://github.com/pptrick/KNN_CUDA. (Install KNN_CUDA requires CUDA environment, ensure that your CUDA version >= 10.2. Also, It only supports torch v1.0+.)
 
 ### Load Dataset and Checkpoints:
-Download our [checkpoints](https://drive.google.com/drive/folders/128yIostfVzvbTQzoW3GO2MKEm62uTplp?usp=drive_link) and [datasets](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd), then organize the file structure:
+Download our [checkpoints](https://drive.google.com/drive/folders/1skhfVJWNJaX_xicRORBtQ3BRYCxh_TOa?usp=sharing) and [datasets](https://drive.google.com/drive/folders/1U7YJKSrlWOY5h2MJRc_cwJPkQ8600jbd), then organize the file structure:
 ```
 Robust-Digital-Twin-Tracking
 ├── checkpoints
